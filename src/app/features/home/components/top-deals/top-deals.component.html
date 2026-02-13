@@ -1,0 +1,35 @@
+<section class="w-full mt-3 lg:px-3">
+    <div class="bg-white border border-gray-200 p-4">
+
+        <h2 class="text-xl font-semibold mb-4">Top Deals</h2>
+
+        @if (loading()) {
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div *ngFor="let i of [1,2,3,4]" class="h-40 bg-gray-200 animate-pulse rounded"></div>
+        </div>
+        }
+
+        @if (!loading()) {
+        <div #scrollContainer class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+
+            @for(item of products(); track item.root_bs_rank) {
+            <div class="min-w-[200px] border rounded-md p-4 hover:shadow-md transition">
+
+                <div class="h-40 flex items-center justify-center overflow-hidden">
+                    <img [src]="item.image_url"
+                        class="max-h-full object-contain transition duration-300 hover:scale-105" />
+                </div>
+
+                <p class="mt-2 text-sm font-medium text-gray-600 line-clamp-1 text-center">
+                    {{item.title}}
+                </p>
+
+                <p class="text-base font-semibold text-center">
+                    From ₹{{ item.final_price }}
+                </p>
+            </div>
+            }
+        </div>
+        }
+    </div>
+</section>

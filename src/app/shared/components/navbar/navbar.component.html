@@ -1,0 +1,101 @@
+<nav class="w-full border-b bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+
+        <!-- Logo -->
+        <img src="logo.png" alt="Omnibazaar" class="h-10 cursor-pointer" (click)="navigate('/')" />
+
+        <!-- Search -->
+        <div class="flex-1 max-w-xl relative">
+            <lucide-icon [img]="Search" class="absolute left-1 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+
+
+            <input type="text" placeholder="Search for Products, Brand and More"
+                class="w-full pl-8 pr-4 py-2 bg-gray-100 rounded-md">
+        </div>
+
+
+        <!-- Login Dropdown -->
+        <div class="relative" (mouseenter)="loginHover.set(true)" (mouseleave)="loginHover.set(false)">
+
+            <button class="flex items-center gap-2 hover:text-blue-600" (click)="navigate('/login')">
+
+                <lucide-icon [img]="User" class="w-4 h-4" />
+                <span class="hidden md:inline">Login</span>
+            </button>
+
+            @if (loginHover()) {
+            <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md p-3 z-50">
+
+                <div class="text-sm mb-2">
+                    New Customer?
+                    <span class="text-blue-500 text-sm mb-3" (click)="navigate('/register')">
+                        Sign Up
+                    </span>
+                </div>
+
+                <div class="border-t pt-2 space-y-2 text-sm">
+
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                        <lucide-icon [img]="User" class="w-4 h-4" />
+                        My Profile
+                    </div>
+
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                        <lucide-icon [img]="Package" class="w-4 h-4" />
+                        Orders
+                    </div>
+
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                        <lucide-icon [img]="Heart" class="w-4 h-4" />
+                        Wishlist
+                    </div>
+
+                </div>
+            </div>
+            }
+
+        </div>
+
+        <!-- Cart -->
+        <button class="flex items-center gap-2 hover:text-blue-600">
+            <lucide-icon [img]="ShoppingCart" class="w-5 h-5" />
+            <span class="hidden md:inline">Cart</span>
+        </button>
+
+        <!-- Become a Seller -->
+        <button class="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-md transition"
+            (click)="navigate('/seller')">
+            <lucide-icon [img]="Store" class="w-5 h-5" />
+            <span class="hidden md:inline">Become a Seller</span>
+        </button>
+
+        <!-- More Dropdown -->
+        <div class="relative hidden md:block" (mouseenter)="moreHover.set(true)" (mouseleave)="moreHover.set(false)">
+
+            <button>
+                <lucide-icon [img]="MoreVertical" class="w-5 h-5" />
+            </button>
+
+            @if (moreHover()) {
+            <div class="absolute top-full right-0 mt-2 w-48 bg-white shadow-lg rounded-md p-3 z-50 text-sm space-y-2">
+                <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                    <lucide-icon [img]="Bell" class="w-4 h-4" />
+                    Notifications
+                </div>
+
+                <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                    <lucide-icon [img]="Headset" class="w-4 h-4" />
+                    24x7 Customer Care
+                </div>
+
+                <div class="flex items-center gap-2 cursor-pointer hover:text-blue-600">
+                    <lucide-icon [img]="TrendingUp" class="w-4 h-4" />
+                    Advertise
+                </div>
+            </div>
+            }
+
+        </div>
+
+    </div>
+</nav>
