@@ -1,0 +1,9 @@
+<section class="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-3 lg:px-3">
+
+    <app-category-section heading="Fashion's Top Deals" [items]="shoes()" [isLoading]="loadingShoes()"/>
+
+    <app-category-section heading="Hair & Skincare Essentials" [items]="beauty()" [isLoading]="loadingBeauty()"/>
+
+    <app-category-section heading="Best Gadgets & Appliances" [items]="electronics()" [isLoading]="loadingElectronics()"/>
+
+</section>
