@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { LucideAngularModule, Heart, Package, Search, Store, CircleUserRound, ShoppingCart, TrendingDown, Bell, Headset, EllipsisVertical } from 'lucide-angular';
+import { LucideAngularModule, Heart, Package, Search, Store, CircleUserRound, ShoppingCart, Bell, Headset, EllipsisVertical, TrendingUp } from 'lucide-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +22,7 @@ export class NavbarComponent {
   readonly Store = Store;
   readonly Bell = Bell;
   readonly Headset = Headset;
-  readonly TrendingUp = TrendingDown;
+  readonly TrendingUp = TrendingUp;
 
   constructor(private router: Router) {}
 

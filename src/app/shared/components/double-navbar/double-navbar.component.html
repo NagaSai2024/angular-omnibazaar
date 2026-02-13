@@ -1,1 +1,53 @@
-<p>double-navbar works!</p>
+<div class="w-full">
+
+  <div class="bg-purple-200">
+    <div class="max-w-7xl mx-auto px-20 py-3 flex items-center gap-4">
+
+      <img
+        src="/logo.png"
+        alt="Omnibazaar"
+        class="h-8 cursor-pointer"
+        (click)="navigate('/')"
+      />
+
+      <div class="flex-1 max-w-xl relative">
+        <input
+          placeholder="Search for products, brands and more"
+          class="w-full pl-3 pr-8 py-2 bg-white rounded-none border outline-none"
+        />
+
+        <lucide-icon
+          [img]="Search"
+          class="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 cursor-pointer">
+        </lucide-icon>
+      </div>
+
+      <div class="relative"
+           (mouseenter)="loginHover.set(true)"
+           (mouseleave)="loginHover.set(false)">
+
+        <button
+          class="text-purple-600 bg-white px-4 py-2 rounded-none hover:bg-gray-100"
+          (click)="navigate('/login')">
+          Login
+        </button>
+
+        @if (loginHover()) {
+          <div class="absolute top-full mt-2 bg-white shadow-md p-3 w-40">
+            <p class="text-sm">New Customer?</p>
+          </div>
+        }
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-20 py-2">
+      <p class="text-sm font-medium">TV</p>
+    </div>
+  </div>
+
+</div>
